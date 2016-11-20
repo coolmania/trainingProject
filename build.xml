@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <project name="SampleJavaProject" default="jar"
          xmlns:ivy="antlib:org.apache.ivy.ant">
-
+Line 1 written from the fork repo will conflict
   <!-- Project-specific configuration -->
   <loadproperties srcfile="project.properties"/>
   <property name="main.class" value="${package.main}.${ant.project.name}"/>
@@ -12,7 +12,8 @@
   <property name="test.dir" value="test"/>
   <property name="build.dir" value="build"/>
   <property name="dist.dir" value="dist"/>
-
+ 
+Line 2 written from the fork repo will not conflict
   <!-- Targets -->
 
   <target name="resolve" description="Retrieve dependencies with Ivy.">
@@ -173,6 +174,13 @@
     </cobertura-instrument>
   </target>
 
+Line 3 written from the fork repo will NOT conflict
+Line 3 written from the fork repo will NOT conflict
+Line 3 written from the fork repo will NOT conflict
+Line 3 written from the fork repo will NOT conflict
+Line 3 written from the fork repo will NOT conflict
+Line 3 written from the fork repo will NOT conflict
+Line 3 written from the fork repo will NOT conflict
   <target name="test" depends="test-compile" description="Run the unit tests.">
     <junit fork="yes">
       <classpath>
@@ -213,6 +221,7 @@
       <arg value="--detach-sign"/>
       <arg value="--armor"/>
       <fileset dir="${dist.dir}/bundle"/>
+Line 4 written from the fork repo will conflict
     </apply>
     <!-- Pack it all up -->
     <jar destfile="${dist.dir}/bundle.jar" basedir="${dist.dir}/bundle"/>
